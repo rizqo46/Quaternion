@@ -5,7 +5,8 @@ class Quaternion(object):
 			              self.i + other.i,
 			              self.j + other.j,
 			              self.k + other.k)
-	def __init__(self, h, i, j, k):
+
+	def __init__(self, h=0, i=0, j=0, k=0):
 		super(Quaternion, self).__init__()
 
 		self.h = h
