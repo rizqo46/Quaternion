@@ -11,6 +11,6 @@ class Quaternion(object):
 
 
 	def __repr__(self):
-		return "Quaternion({})".format(self.value)
+		return "Quaternion{}".format(self.value)
 
 		
