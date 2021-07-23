@@ -2,20 +2,27 @@ class Quaternion(object):
 	"""docstring for Quaternion"""
 	def __sub__(self, other):
 		return self + (-other)
-		
+
 	def __neg__(self):
 		return Quaternion(-self.h, -self.i, -self.j, -self.k)
 
 	def __mul__(self, other):
-		a = self
-		b = other
+		if isinstance(other, Quaternion):
+			a = self
+			b = other
 
-		h = a.h*b.h - a.i*b.i - a.j*b.j - a.k*b.k
-		i = a.h*b.i + a.i*b.h + a.j*b.k - a.k*b.j
-		j = a.h*b.j - a.i*b.k + a.j*b.h + a.k*b.i
-		k = a.h*b.k + a.i*b.j - a.j*b.i + a.k*b.h
+			h = a.h*b.h - a.i*b.i - a.j*b.j - a.k*b.k
+			i = a.h*b.i + a.i*b.h + a.j*b.k - a.k*b.j
+			j = a.h*b.j - a.i*b.k + a.j*b.h + a.k*b.i
+			k = a.h*b.k + a.i*b.j - a.j*b.i + a.k*b.h
 
-		return Quaternion(h, i ,j ,k)
+			return Quaternion(h, i ,j ,k)
+
+		elif (type(other) == float) or  (type(other) == int):
+			return Quaternion(other*self.h, other*self.i ,other*self.j ,other*self.k)
+
+		else:
+			return NotImplemented
 
 	def __add__(self, other):
 		return Quaternion(self.h + other.h, 
