@@ -1,5 +1,8 @@
 class Quaternion(object):
 	"""docstring for Quaternion"""
+	def __neg__(self):
+		return Quaternion(-self.h, -self.i, -self.j, -self.k)
+		
 	def __mul__(self, other):
 		a = self
 		b = other
