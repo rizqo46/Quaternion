@@ -1,5 +1,10 @@
 class Quaternion(object):
 	"""docstring for Quaternion"""
+	def __add__(self, other):
+		return Quaternion(self.h + other.h, 
+			              self.i + other.i,
+			              self.j + other.j,
+			              self.k + other.k)
 	def __init__(self, h, i, j, k):
 		super(Quaternion, self).__init__()
 
