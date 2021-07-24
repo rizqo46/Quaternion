@@ -1,6 +1,9 @@
 # Quaternion
 Quaternion based in Python OOP
+
 For more information about Quaternion: https://en.wikipedia.org/wiki/Quaternion
+
+
 
 Import module:
 
